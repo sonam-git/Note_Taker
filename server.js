@@ -1,6 +1,6 @@
 // Import the Express library.
 const express = require("express");
-const htmlRoutes = require("./routes/htmlRoutes");
+
 // grab routes/index.js
 const routes = require("./routes");
 
@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 
 // middlewares
 app.use(express.static('public'));
-// creating req.body
+// creating req.body / Parse URL encoded & JSON
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -20,8 +20,8 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // use router variable from line 3,const routes = require("./routes");
-app.use(routes);
-app.use('/', htmlRoutes);
+app.use('/',routes);
+
 
 
 // listen on port
