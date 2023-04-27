@@ -7,27 +7,18 @@ const routes = require("./routes");
 // Initializing the express app.
 const app = express();
 
-
 const PORT = process.env.PORT || 3001;
 
-// middlewares
-app.use(express.static('public'));
+// Express middleware will always run the operation in the order from top to bottom "order matters"
 // creating req.body / Parse URL encoded & JSON
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
 
-
-
-
-// use router variable from line 3,const routes = require("./routes");
-app.use('/',routes);
-
-
+// forward all request with a pattern of "/" to router in routes folder
+app.use("/", routes);
 
 // listen on port
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
 );
-
-
-

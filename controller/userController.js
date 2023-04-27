@@ -20,7 +20,7 @@ const createNotes = (req, res) => {
   const id = uuidv4();
 
   if (title && text) {
-    //  read the users.json file
+    //  read the notes.json file
     fs.readFile(path.join(__dirname, '../db/notes.json'), 'utf8', (err, notes) => {
       //  check for errors if any happened
       if (err) {
@@ -29,13 +29,13 @@ const createNotes = (req, res) => {
 
       const data = JSON.parse(notes);
 
-      //  add data to the array from users.json file
+      //  add data to the array from notes.json file
       data.push({
         id,
        title,
        text,
       });
-      //  write the new array to the users.json file
+      //  write the new array to the notes.json file
       fs.writeFile(path.join(__dirname, '../db/notes.json'), JSON.stringify(data, null, 2), (err) => {
 
         if (err) {
@@ -44,35 +44,40 @@ const createNotes = (req, res) => {
         //  send newly added data to the front-end
         res.json({title, text});
       });
-
-
     });
   } else {
     res.status(400).json({error: 'Title and Text are required'});
   }
 
 }
-// function to delete the note item by id
+
 const deleteNotes = (req, res) => {
+    //  read the notes.json file
   fs.readFile(path.join(__dirname, '../db/notes.json'), 'utf8', (err, notes) => {
     if (err) {
       return res.status(500).json({err});
     }
-    res.json(JSON.parse(notes));
-  });
+    let noteList = JSON.parse(notes);
+    
   const id = req.params.id;
-  const index = notes.findIndex(notes => notes.id === id);
-  if (index !== -1) {
-    notes.splice(index, 1);
+  const newNoteList = noteList.filter((notes)=> notes.id !== id);
+  //  write the new array to the notes.json file
+  fs.writeFile(path.join(__dirname, '../db/notes.json'), JSON.stringify(newNoteList, null, 2), (err) => {
+    if (err) {
+      return res.status(500).json({err});
+    }
+    //  send message that the note with the given id is been deleted
     res.send(`Note with ID ${id} deleted successfully`);
-  } else {
-    res.status(404).send(`Note with ID ${id} not found`);
-  }
-};
-
+  });
+  
+}
+  );
+}
+  
 
 module.exports = {
   getNotes,
   createNotes,
   deleteNotes
 };
+

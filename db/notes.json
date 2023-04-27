@@ -1,27 +1,7 @@
 [
   {
-    "id": 0,
-    "title": " ",
-    "text": " "
-  },
-  {
-    "id": "869b38ee-b797-4ff3-b9b4-e71c1f9039ef",
-    "title": "rrr",
-    "text": "fffff"
-  },
-  {
-    "id": "e3e852a9-37bf-4039-9225-e4739e42681d",
-    "title": "to do task",
-    "text": "get up in the morning and eat"
-  },
-  {
-    "id": "9bee7f43-f4f7-4945-a2f2-9bccb326901b",
-    "title": "hello",
-    "text": "hwllo"
-  },
-  {
-    "id": "0bb39ae8-389a-461e-936c-9142a776a929",
-    "title": "abcd",
-    "text": "xyz"
+    "id": "0c1147ff-35a9-4a76-82d7-4798a8244e85",
+    "title": "Grocery List",
+    "text": "1. Potato\n2. Banana\n3. Veggies"
   }
 ]
