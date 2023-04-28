@@ -50,7 +50,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 ```
 
 ## Usage Instructions
-1. Click here to open the [Deployed Application Link]()
+1. Click here to open the [Deployed Application Link](https://note-sherpa.herokuapp.com/)
 2. Click "Get Started" to open the note taker.
 3. Enter text into the 'title' and 'text' fields
 4. Click the save icon (top right) to save the note.
@@ -66,8 +66,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
  - Express.js: [Express](https://expressjs.com/en/starter/installing.html)
 3. Open the cloned repository in any source code editor.
 4. Open the integrated terminal 
-5. add "start": "nodemon server" in side the scripts object within the package.json file and run npm i 
-    if you want the server keeps running on every change happens within any file.
+5. npm start to run the server
 
 ## Built With
 - JSON [JSON](https://www.npmjs.com/package/json)
@@ -90,7 +89,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 
 ## Solution URL:
-[Solution URL Link:](https://github.com/sonam-git/Note_Taker)
+[Solution URL Link:](https://note-sherpa.herokuapp.com/)
 
 ## Demo Walkthrough Video:
 [Click here to watch the Demo](https://drive.google.com/file/d/1A6Pg2u-JymIgOtlhLAJOZLef1by6rxvx/view)
