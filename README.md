@@ -97,6 +97,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 ## Screenshots:
 
+![Screenshot 2023-04-25 at 11 03 46 PM](https://user-images.githubusercontent.com/89502092/234774748-216485a4-176b-43df-bf37-0a49d51d8c5b.png)
 
 ## License
 This project is covered under the [MIT](https://opensource.org/licenses/MIT) license.
